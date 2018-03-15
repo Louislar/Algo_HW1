@@ -2,10 +2,10 @@
 
 using namespace std;
 
-int perfect(int num)
+int perfect(long int num)
 {
-    int sum=0;
-    for(int i=1;i<num;i++)
+    long int sum=0;
+    for(long int i=1;i<num;i++)
     {
         if(num%i==0)
         {
@@ -24,16 +24,17 @@ int perfect(int num)
 int main()
 {
     int n;
+    int output_num=0;
     cin>>n;
     for(int i=0;i<n;i++)
     {
-        int input;
+        long int input;
         cin>>input;
         if(perfect(input)&&input>0)
         {
+            if(output_num) cout<<" ";
             cout<<input;
-            if(i<n-1)
-                cout<<" ";
+            output_num++;
         }
     }
 }
